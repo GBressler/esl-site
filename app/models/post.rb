@@ -1,7 +1,8 @@
 class Post < ActiveRecord::Base
   belongs_to :user
 #scope :created_by, -> (user_id) { where(user_id: user_id) }
-
+  has_many :comments
+  
   has_many :collaborations
   has_many :collaborators, through: :collaborations, source: :user
 
