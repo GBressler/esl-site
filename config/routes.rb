@@ -12,10 +12,14 @@ Rails.application.routes.draw do
    #   root :to => 'posts#index', as: :authenticated_root
    #end
     #root :to => "posts#index"
+  #post 'contact', to:'contact#process_form'
+    #root to: 'static_pages#home'
+  #end
 
 
-
-    
+    resources :contacts, only: [:new, :create] do
+      root :to => 'static_pages#home'
+    end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
