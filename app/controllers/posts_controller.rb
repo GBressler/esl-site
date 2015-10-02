@@ -9,6 +9,10 @@ class PostsController < ApplicationController
     @posts = Post.accessible_by(current_ability, :index)
    #@posts = Post.all
     @posts = Post.created_by(current_user)
+    if current_user.id == 1
+      @posts = Post.all
+    end
+
     #@posts = Post.includes(:user).reverse_chronological_order.references(:user)posts = Post.created_by(current_user)
     case params[:list]
     when 'me'

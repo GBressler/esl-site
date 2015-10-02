@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
   devise_for :users
    authenticated :user do
+    
       root :to => 'posts#index', as: :authenticated_root
     end
 
@@ -33,6 +34,8 @@ Rails.application.routes.draw do
   controller :static_pages do
     get :home
     get 'about' =>'static_pages#about'
+    get 'about_class' => 'static_pages#about_class'
+    get 'schedule_class' =>'static_pages#schedule_class'
   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

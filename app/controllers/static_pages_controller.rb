@@ -15,4 +15,8 @@ class StaticPagesController < ApplicationController
 	def show
 		render params[:id]
 	end
+	
+	def schedule_class
+		
+	end
 end

@@ -8,6 +8,9 @@
 </head>
 <body>
 <%= render partial: "shared/navbar" %>
+<% if user_signed_in? %>
+ You are signed in as: <%= current_user.first_name %>
+<% end %>
 
 
 <%= yield %>
