@@ -20,4 +20,74 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      article:
+        title: "Title"
+        body: "Body"
+  forms:
+    messages:
+      success: "Operation succeeded!"
+    buttons:
+      edit: "Edit"
+      submit: "Submit"
+  contact:
+    first_name:
+    last_name:
+    email_address:
+    message_content:
+      success: "Operation succeeded!"
+    buttons:
+      submit: "Submit"
+  menu:
+    sign_in: "Come On In"
+    new_post: "Get Funky"
+    sign_out: "Get me outta here"
+    contact:
+    about_me:
+    class_times:
+    policies:
+    resources:
+  home:
+  about_me:
+  posts:
+    index:
+      header: "stuff Said"
+      title: "stuff Said"
+      user:  "Someone"
+      title_of_post:  "stuff Said"
+      content: ""
+      show:  "read"
+      edit:
+      destroy:
+    show:
+      user:
+      title:
+      content:
+      Comments:
+      comments:
+      commenter:
+      reply:
+      buttons:
+        create_comment:
+      edit:
+      back:
+    edit:
+      title: "Editing Post"
+      user:
+      title:
+      content:
+      restricted:
+      update_post:
+      show:
+      back:
+    new:
+      title: "New Post"
+      user:
+      title:
+      content:
+      restricted:
+      buttons:
+        create_post:
+      show:
+      back:

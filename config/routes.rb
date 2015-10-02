@@ -2,7 +2,11 @@ Rails.application.routes.draw do
   resources :posts do 
     resources :comments
   end
-  resources :posts
+  scope '(:locale)' do
+    resources :posts
+    #resources :contacts
+    #resources :about
+  end
   devise_for :users
    authenticated :user do
       root :to => 'posts#index', as: :authenticated_root
@@ -25,7 +29,11 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'static_pages#home'
-
+   
+  controller :static_pages do
+    get :home
+    get 'about' =>'static_pages#about'
+  end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

@@ -8,7 +8,7 @@ class ContactsController < ApplicationController
 		@contact = Contact.new(secure_params)
 		if @contact.valid?
 			UserMailer.contact_email(@contact).deliver
-			flash[:notice]= "Message sent from #{@contact.first_name}"
+			flash[:notice] = "Message sent from #{@contact.first_name}"
 			redirect_to root_path
 		else
 			flash[:alert] = "An error occurred while delivering this message."
