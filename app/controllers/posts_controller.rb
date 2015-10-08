@@ -6,25 +6,26 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.accessible_by(current_ability, :index)
-   #@posts = Post.all
-    @posts = Post.created_by(current_user)
+    #@posts = Post.accessible_by(current_ability, :index)
+   
+    @posts = Post.created_by(current_user) || @posts = Post.with_collaborators
+
     if current_user.id == 1
       @posts = Post.all
     end
 
-    #@posts = Post.includes(:user).reverse_chronological_order.references(:user)posts = Post.created_by(current_user)
-    case params[:list]
-    when 'me'
-      @posts = @posts.created_by(current_user.id)
+    #@posts = Post.reverse_chronological_order.references(:user)posts = Post.created_by(current_user)
+   # case params[:list]
+    #when 'me'
+     # @posts = @posts.created_by(current_user.id)
       # Alternatively, you can also use
       # @posts = @posts.accessible_by(current_ability, :edit).where("posts.user_id = ?", current_user.id)
       # but that is too long
-    when 'with_friends'
-     @posts = @posts.with_collaborators
-    else
-      @posts = @posts.accessible_by(current_ability, :index)
-    end
+    #when 'with_friends'
+     #@posts = @posts.with_collaborators
+    #else
+     #@posts = @posts.accessible_by(current_ability, :index)
+    #end
       #Check lines 9 & 11 - Only Admin should see posts from all users, unless the users are collaborators
   end
 
@@ -93,6 +94,7 @@ class PostsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def post_params
-      params.require(:post).permit(:user_id, :title, :content, :restricted)
+      params.require(:post).permit(:user_id, :title, :content, :restricted,  :collaborator_emails  )
     end
+    #some problem with the :collaborator_emails
 end

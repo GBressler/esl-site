@@ -23,10 +23,16 @@
     <%= f.label :content %><br>
     <%= f.text_area :content %>
   </div>
-  <div hidden class="field">
+  <div class="field">
     <%= f.label :restricted %><br>
     <%= f.check_box :restricted %>
   </div>
+  <% if current_user.id == 1 %>
+  <div class="field">
+    <%= f.label :collaborator_emails, "Collaborators" %><br/>
+    <%= f.select :collaborator_emails, User.where("id != ?", current_user.id).select(:email).distinct.pluck(:email), {}, { multiple: true, style: "width: 31em;", class: "js-select2" } %>
+  </div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>

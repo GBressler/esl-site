@@ -13,7 +13,7 @@ class Ability
 
         indexable_condition = <<-EOC
 restricted = ? OR posts.user_id = ? OR (restricted = ? AND EXISTS
-  (SELECT * FROM collaborations WHERE collaborations.post_id = posts.id AND collaborations.user_id = ?))
+  (SELECT * FROM collaborations WHERE collaborations.post_id = posts.id AND collaborations.user_id = ? )
         EOC
         can [:index, :show], Post, [indexable_condition, false, user.id, true, user.id] do |post|
           !post.restricted? || post.user_id == user.id ||

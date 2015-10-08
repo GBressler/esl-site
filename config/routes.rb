@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+ 
+controller :users do
+  get 'show' => 'users/show'
+end
+resources :users
+controller :static_pages do
+    get :home
+  get 'show' =>'users/show'
+end
+
+  #get 'user_profile_page/index'
+  #get 'user_profile_page/show' 
+  #get 'users'  => 'users#index'
+
+  #get 'user_profile_page/edit'
+
+  #get 'user_profile_page/update'
+
   resources :posts do 
     resources :comments
   end
@@ -8,6 +26,7 @@ Rails.application.routes.draw do
     #resources :about
   end
   devise_for :users
+
    authenticated :user do
     
       root :to => 'posts#index', as: :authenticated_root

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table>
+		<td>
+			<% @users.each do |user| %>
+			<tr><%= user.first_name %></tr>
+			<% end %>
+		</td>
+	</table>
+</body>
+</html>
