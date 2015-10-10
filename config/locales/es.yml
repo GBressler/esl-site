@@ -37,7 +37,7 @@ es:
     buttons:
       submit: "Submit"
   menu:
-    sign_in: "Come On In"
+    sign_in: "Sign In"
     new_post: ""
     sign_out: "Salir"
   posts:

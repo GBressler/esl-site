@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
  
-
- 
 controller :users do
   get 'show' => 'users/show'
 end

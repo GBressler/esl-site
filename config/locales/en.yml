@@ -40,9 +40,9 @@ en:
     buttons:
       submit: "Submit"
   menu:
-    sign_in: "Come On In"
-    new_post: "Get Funky"
-    sign_out: "Get me outta here"
+    sign_in: "Sign In"
+    new_post: "Create a Post"
+    sign_out: "Sign Out"
     contact:
     about_me:
     class_times:
@@ -52,10 +52,10 @@ en:
   about_me:
   posts:
     index:
-      header: "stuff Said"
-      title: "stuff Said"
-      user:  "Someone"
-      title_of_post:  "stuff Said"
+      header: "Posts"
+      title: "title"
+      user:  "User"
+      title_of_post:  "Title"
       content: ""
       show:  "read"
       edit:

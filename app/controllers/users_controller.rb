@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
 	before_action :set_user, only: [:show, :edit, :update, :destroy]
   def index
+    
   	if current_user.id == 1
     	@users = User.all
    	else
