@@ -70,6 +70,7 @@ GEM
       thread_safe (~> 0.1)
       warden (~> 1.2.3)
     devise-i18n (0.12.1)
+    devise-i18n-views (0.3.6)
     engtagger (0.2.0)
     erubis (2.7.0)
     execjs (2.6.0)
@@ -182,6 +183,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt (~> 3.1.7)
   bootstrap-sass (~> 3.3.5.1)
   byebug
   cancan
@@ -189,6 +191,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   devise-i18n
+  devise-i18n-views
   globalize
   jbuilder (~> 2.0)
   jquery-rails

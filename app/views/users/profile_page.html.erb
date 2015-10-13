@@ -1,3 +1,20 @@
 <h1>Hi, <%= current_user.username %>!</h1>
-
+<p><%= @user.first_name %> <%= @user.last_name %></p>
+<p><%= @user.email %></p>
 <p><%= @user.username %></p>
+<div>
+	<p>Goals:</p>
+</div>
+<div>
+	<div>Homework:</div><br />
+	<div>Additional Exercises:
+	<ul>
+	<li>Lorem</li>
+	<li>Ipsem</li>
+	<li>Something</li>
+	</ul>
+	</div>
+</div>
+
+
+<div><%= link_to t('menu.new_post'), new_post_path %></div>

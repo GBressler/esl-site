@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
  
-controller :users do
-  get 'show' => 'users/show'
-end
+#controller :users do
+ # get 'show' => 'users/show'
+#end
 resources :users
+get 'users/edit'
 controller :static_pages do
     get :home
   get 'show' =>'users/show'
