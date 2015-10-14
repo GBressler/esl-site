@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   #before_filter load_and_authorize_resource :user
     #before_action :authenticate_user!
   #before_action :set_user,
-load_and_authorize_resource param_method: :user_params, only: [:show, :edit, :update, :destroy]
+load_and_authorize_resource param_method: :user_params, only: [:show, :edit, :update] 
 
 
   def index
@@ -36,7 +36,7 @@ load_and_authorize_resource param_method: :user_params, only: [:show, :edit, :up
   end
 
   def destroy
-  	
+  
   end
   private
     # Use callbacks to share common setup or constraints between actions.

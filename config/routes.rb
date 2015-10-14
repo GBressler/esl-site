@@ -26,8 +26,21 @@ end
     #resources :contacts
     #resources :about
   end
-  devise_for :users
+  #devise_for :users
+  devise_for :users 
+  #delete "/logout" => "devise/sessions#destroy", :as => :destroy_user_session
+  #root :to => 'static_pages#home'
 
+  #devise_scope :user do
+   # get 'login', to: "devise/sessions#new", as: "login"
+    #get 'logout', to: "devise/sessions#destroy", as: "logout"
+    #get 'logout', to: "users/sessions#destroy", as: "logout"
+    #get 'signup', to: "users#new", as: "signup"
+    #match '/users/:id', :to => 'users#show', :as => :user
+    #devise_for :users do get '/users/sign_out' => 'devise/sessions#destroy'
+  #end
+  #end
+ 
    authenticated :user do
     
       root :to => 'posts#index', as: :authenticated_root
